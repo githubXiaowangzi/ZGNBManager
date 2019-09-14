@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zengge.nbmanager"
+    android:versionCode="133"
+    android:versionName="Build 133" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+
+    <application
+        android:name="com.zengge.catchexception.CrashApp"
+        android:icon="@drawable/android"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.zengge.nbmanager.ZGNBManagerMain"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zengge.nbmanager.ZipManagerMain"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/zip_editor" />
+        <activity
+            android:name="com.zengge.vp.VideoPlayerActivity"
+            android:label="@string/videoplayer_label" />
+        <activity
+            android:name="com.zengge.nbmanager.TextEditor"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/text_editor" />
+        <activity
+            android:name="com.zengge.nbmanager.ClassListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/class_editor" />
+        <activity
+            android:name="com.zengge.nbmanager.ClassItemActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/class_item" />
+        <activity
+            android:name="com.zengge.nbmanager.SearchClassesActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/search_class" />
+        <activity
+            android:name="com.zengge.nbmanager.SearchMethodsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/search_method" />
+        <activity
+            android:name="com.zengge.nbmanager.FieldListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/field_list" />
+        <activity
+            android:name="com.zengge.nbmanager.FieldItemEditorActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/field_item_editor" />
+        <activity
+            android:name="com.zengge.nbmanager.FieldItemNewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/field_item_new" />
+        <activity
+            android:name="com.zengge.nbmanager.MethodListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/method_list" />
+        <activity
+            android:name="com.zengge.nbmanager.CodeEditorActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/code_editor" />
+        <activity
+            android:name="com.zengge.nbmanager.MethodItemEditorActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/method_item_editor" />
+        <activity
+            android:name="com.zengge.nbmanager.MethodItemNewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/method_item_new" />
+        <activity
+            android:name="com.zengge.nbmanager.ClassInfoEditorActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/class_info_editor" />
+        <activity
+            android:name="com.zengge.nbmanager.TextPreferences"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/text_preferences" />
+        <activity
+            android:name="com.zengge.imageviewer.HugeImageViewerActivity" />
+        <activity
+            android:name="com.zengge.ap.AudioPlayer"
+            android:label="@string/audioplayer_label" />
+		<activity
+            android:windowSoftInputMode="adjustPan"
+            android:name="com.zengge.elfeditor.ElfActivity"
+            android:label="ELF 编辑器" />
+		<activity
+            android:windowSoftInputMode="adjustPan"
+            android:name="com.zengge.arsceditor.ArscActivity"
+            android:label="Arsc 编辑器" />
+    </application>
+
+</manifest>

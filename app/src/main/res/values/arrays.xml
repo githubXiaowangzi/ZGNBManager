@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string-array name="translate">
+        <item>翻译</item>
+    </string-array>
+    <string-array name="translate_provider">
+        <item>百度翻译</item>
+        <item>必应翻译</item>
+    </string-array>
+     <string-array name="language">
+        <item>自动识别</item>
+        <item>中文</item>
+        <item>英语</item>
+        <item>日语</item>
+        <item>韩语</item>
+        <item>法语</item>
+        <item>泰语</item>
+        <item>俄语</item>
+        <item>德语</item>
+        <item>希腊语</item>
+        <item>意大利语</item>
+        <item>西班牙语</item>
+        <item>葡萄牙语</item>
+        <item>阿拉伯语</item>
+    </string-array>
+    <string-array name="language_short">
+        <item>auto</item>
+        <item>zh</item>
+        <item>en</item>
+        <item>jp</item>
+        <item>kor</item>
+        <item>fra</item>
+        <item>th</item>
+        <item>ru</item>
+        <item>de</item>
+        <item>el</item>
+        <item>it</item>
+        <item>spa</item>
+        <item>pt</item>
+        <item>ara</item>
+    </string-array>
+
+<string-array name="dialog_menu">
+    <item>以系统默认方式打开</item>
+    <item>以文本编辑</item>
+    <item>删除</item>
+    <item>重命名</item>
+    <item>复制</item>
+    <item>剪切</item>
+    <item>权限</item>
+</string-array>
+
+<string-array name="search_mod">
+    <item>在代码中搜索字符串</item>
+    <item>在代码中搜索函数</item>
+    <item>在代码中搜索常量</item>
+</string-array>
+
+<string-array name="entries_font_size_prefs">
+    <item>8 pt</item>
+    <item>10 pt</item>
+    <item>12 pt</item>
+    <item>14 pt</item>
+    <item>16 pt</item>
+    <item>18 pt</item>
+    <item>20 pt</item>
+</string-array>
+
+<string-array name="values_font_size_prefs">
+    <item>8</item>
+    <item>10</item>
+    <item>12</item>
+    <item>14</item>
+    <item>16</item>
+    <item>18</item>
+    <item>20</item>
+</string-array>
+
+
+<string-array name="entries_font_type_prefs">
+    <item>Monospace</item>
+    <item>Serif</item>
+    <item>Sans Serif</item>
+</string-array>
+
+<string-array name="values_font_type_prefs">
+    <item>Monospace</item>
+    <item>Serif</item>
+    <item>Sans Serif</item>
+</string-array>
+</resources>

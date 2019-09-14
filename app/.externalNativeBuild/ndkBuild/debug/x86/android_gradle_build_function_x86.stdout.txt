@@ -1,0 +1,1 @@
+make: `E:/zengxianxi/androidsdk/ZGNBManager/app/build/intermediates/ndkBuild/debug/obj/local/x86/libfunction.so' is up to date.

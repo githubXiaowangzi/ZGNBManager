@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    //apply plugin: 'application'
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.zengge.nbmanager"
+        minSdkVersion 19
+        targetSdkVersion 28
+        multiDexEnabled true
+        ndk {
+            moduleName "function"
+            abiFilters "armeabi-v7a", "x86", "arm64-v8a"
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+        additionalParameters += '--multi-dex'
+        additionalParameters += '--set-max-idx-number=35000'//每个包内方法数上限（根据实际项目配置这个数，来适配4.0-4.4一些低端机型，因为拆分的dex太大，这些低端机型加载不了dex）
+        additionalParameters += '--minimal-main-dex'
+    }
+
+    externalNativeBuild {
+        ndkBuild{
+            path file("src/main/jni/Android.mk")
+        }
+    }
+
+    buildTypes {
+        debug {
+            initWith debug
+            minifyEnabled true
+            proguardFiles 'proguard.cfg'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles 'proguard.cfg'
+        }
+    }
+}
+
+dependencies {
+    implementation files('libs/asm-3.3.1.jar')
+    implementation files('libs/baksmali.jar')
+    implementation files('libs/commons-compress-1.12.jar')
+    implementation files('libs/dex_utils.jar')
+    implementation files('libs/dexer.jar')
+    implementation files('libs/jd-core-0.7.1.jar')
+    implementation files('libs/json_simple.jar')
+    implementation files('libs/microsoft_translator_api.jar')
+    implementation files('libs/smali_util_build.jar')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation "com.android.support:multidex:1.0.1"
+}
+repositories {
+    mavenCentral()
+}
