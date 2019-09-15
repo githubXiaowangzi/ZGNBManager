@@ -153,9 +153,14 @@
 	<string name="jar2dex_success">JAR2DEX成功！</string>
 	<string name="jar2dex_fail">JAR2DEX失败！</string>
 	<string name="jar_instruction">这是一个标准Jar文件（里面全部是标准Java虚拟机.class格式的类文件），你是要转成Dex、反编译源代码还是浏览里面的内容？</string>
-	<string name="todex">转为DEX</string>
+	<string name="apk_instruction">这是一个apk文件，你是想浏览内部文件还是反编译其中的java部分代码</string>
+    <string name="open_apk">打开apk</string>
+    <string name="jadx_suc">java代码反编译成功</string>
+    <string name="jadx_fail">java代码反编译失败</string>
+    <string name="todex">转为DEX</string>
 	<string name="explore_jar">浏览JAR</string>
 	<string name="decompile_jar">反编译JAR源代码</string>
+    <string name="decompile_javainapk">反编译java部分代码</string>
 	<string name="djar_success">反编译JAR成功！</string>
 	<string name="djar_fail">反编译JAR失败！</string>
 	<string name="perm_read">读</string>

@@ -17,6 +17,7 @@
 package com.zengge.nbmanager;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -32,6 +33,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -545,6 +547,24 @@ public class ZGNBManagerMain extends AppCompatActivity {
                 }
             });
             builder.show();
+        } else if(file.toString().endsWith(".apk")) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(getString(R.string.tips));
+            builder.setMessage(getString(R.string.apk_instruction));
+            builder.setPositiveButton(getString(R.string.open_apk), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    Intent intent = new Intent(ZGNBManagerMain.this, ZipManagerMain.class);
+                    ZipManagerMain.zipFileName = file.getAbsolutePath();
+                    startActivityForResult(intent, ActResConstant.list_item_details);
+                }
+            });
+            builder.setNegativeButton(getString(R.string.decompile_javainapk), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    DecompileFileUtil.openAppIntent(ZGNBManagerMain.this,file.toString());
+                }
+            });
+            builder.show();
         } else {
             Intent intent = new Intent(this, ZipManagerMain.class);
             ZipManagerMain.zipFileName = file.getAbsolutePath();
@@ -1053,20 +1073,21 @@ public class ZGNBManagerMain extends AppCompatActivity {
 
     private void viewCurrent() {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        Uri uri = Uri.fromFile(mCurrent);
+        Uri uri = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() + ".provider", mCurrent);
+        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        //Uri uri = Uri.fromFile(mCurrent);
         String mime = URLConnection.guessContentTypeFromName(uri.toString());
         if(mime != null) {
             if("text/x-java".equals(mime) || "text/xml".equals(mime))
                 intent.setDataAndType(uri, "text/plain");
             else
                 intent.setDataAndType(uri, mime);
-        } else
-            intent.setDataAndType(uri, "*/*");
-        try {
+        } else intent.setDataAndType(uri, "*/*");
+      //  try {
             startActivity(intent);
-        } catch(Exception e) {
-            showMessage(this, "Intent Exception", e.getMessage());
-        }
+       // } catch(Exception e) {
+       //     showMessage(this, "Intent Exception", e.getMessage());
+      //  }
     }
 
     public void toast(String message) {
@@ -1253,6 +1274,7 @@ public class ZGNBManagerMain extends AppCompatActivity {
         builder.show();
     }
 
+    @SuppressLint("MissingPermission")
     public void SystemInfo() {
         StringBuilder info = new StringBuilder();
         TelephonyManager tm = (TelephonyManager) getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);

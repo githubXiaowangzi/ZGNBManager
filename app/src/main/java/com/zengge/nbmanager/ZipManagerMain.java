@@ -1,6 +1,5 @@
 package com.zengge.nbmanager;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
