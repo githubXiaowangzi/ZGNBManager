@@ -22028,8 +22028,9 @@ com.zengge.arsceditor.Translate.DoTranslate$translate_task -> com.zengge.arscedi
     134:143:void onPreExecute() -> onPreExecute
     125:125:void onProgressUpdate(java.lang.Object[]) -> onProgressUpdate
 com.zengge.catchexception.CrashApp -> com.zengge.catchexception.CrashApp:
-    7:7:void <init>() -> <init>
-    10:26:void onCreate() -> onCreate
+    8:8:void <init>() -> <init>
+    12:14:void attachBaseContext(android.content.Context) -> attachBaseContext
+    17:32:void onCreate() -> onCreate
 com.zengge.dalvik.Parser -> c.f.a.a:
     org.jf.dexlib.CodeItem code -> g
     java.util.regex.Pattern pLong -> c

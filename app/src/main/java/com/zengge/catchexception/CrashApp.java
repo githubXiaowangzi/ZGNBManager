@@ -1,14 +1,20 @@
 package com.zengge.catchexception;
 
 import android.app.Application;
+import android.content.Context;
 import android.widget.Toast;
 import android.support.multidex.MultiDex;
 
 public class CrashApp extends Application {
 
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
+
     public void onCreate() {
         super.onCreate();
-        MultiDex.install(this);
         //CrashHandler.getInstance().init(getApplicationContext());
         try {
             System.loadLibrary("function");

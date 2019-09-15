@@ -1,5 +1,6 @@
 com/zengge/nbmanager/ZGNBManagerMain.class
 com/zengge/nbmanager/ZipManagerMain.class
+android/support/v4/content/FileProvider.class
 android/arch/lifecycle/Lifecycle$Event.class
 android/arch/lifecycle/OnLifecycleEvent.class
 android/support/annotation/AnimRes.class
