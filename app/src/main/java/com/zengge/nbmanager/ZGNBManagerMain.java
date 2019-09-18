@@ -497,7 +497,7 @@ public class ZGNBManagerMain extends AppCompatActivity {
         return value;
     }
 
-    private void openApk(final File file) {
+    public void openApk(final File file) {
         if(file.toString().endsWith(".jar") && isStandardJAR(file.toString())) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(getString(R.string.tips));
@@ -507,8 +507,14 @@ public class ZGNBManagerMain extends AppCompatActivity {
                     new Thread(new Runnable() {
                         public void run() {
                             mHandler.sendEmptyMessage(SHOWPROGRESS);
-                            boolean JAR2DEX_SUC = J2DMain.JarToDex(file.toString(),
-                                                                   file.toString().substring(0, file.toString().length() - 4) + "_converted.dex");
+                            boolean JAR2DEX_SUC = false;
+                            try {
+                                JAR2DEX_SUC = J2DMain.JarToDex(file.toString(),
+                                                                       file.toString().substring(0, file.toString().length() - 4) + "_converted.dex");
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                                JAR2DEX_SUC = false;
+                            }
                             if(!JAR2DEX_SUC)
                                 showToast(getString(R.string.jar2dex_success));
                             else

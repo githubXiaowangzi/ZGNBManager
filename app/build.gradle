@@ -31,7 +31,7 @@ android {
     buildTypes {
         debug {
             initWith debug
-            minifyEnabled true
+          //  minifyEnabled true
             proguardFiles 'proguard.cfg'
         }
         release {
@@ -46,7 +46,6 @@ dependencies {
     implementation files('libs/baksmali.jar')
     implementation files('libs/commons-compress-1.12.jar')
     implementation files('libs/dex_utils.jar')
-    implementation files('libs/dexer.jar')
     implementation files('libs/jd-core-0.7.1.jar')
     implementation files('libs/json_simple.jar')
     implementation files('libs/microsoft_translator_api.jar')
